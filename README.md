@@ -21,6 +21,13 @@ Untuk memulai dengan Sistem Manajemen Karyawan:
 4. Akses aplikasi di peramban Anda di `http://localhost:4200`
 5. Untuk masuk, gunakan username "test" dan password "1".
 
+## Menjalankan JSON Server
+
+Untuk menguji aplikasi Anda dengan data palsu, Anda dapat menggunakan JSON Server.
+
+1. Instal JSON Server secara global jika Anda belum melakukannya: `npm install -g json-server`
+2. Jalankan perintah ini di terminal anda: `json-server --watch db.json --port 3000`
+
 ## Cara Kerja Login
 
 - Ketika Anda mengakses aplikasi, Anda akan diarahkan ke halaman login.
