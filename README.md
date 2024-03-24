@@ -1,6 +1,6 @@
-# Aplikasi Angular Manajemen Karyawan (Mini Project)
+# Aplikasi Angular Sistem Manajemen Karyawan
 
-Aplikasi Manajemen Karyawan adalah proyek mini yang dibuat dengan Angular untuk keperluan pengujian dan demonstrasi. Proyek ini bertujuan menyederhanakan pengelolaan data karyawan dengan menggunakan teknologi Angular. Meskipun sederhana, aplikasi ini menawarkan antarmuka pengguna yang modern dan ramah pengguna, dibangun dengan Angular Material UI.
+Sistem Manajemen Karyawan adalah aplikasi Angular yang tangguh yang dirancang untuk menyederhanakan dan mempermudah pengelolaan data karyawan. Proyek ini menggabungkan antarmuka pengguna Angular Material UI untuk antarmuka modern dan ramah pengguna.
 
 ## Fitur-fitur
 
@@ -27,9 +27,10 @@ Untuk memulai dengan Sistem Manajemen Karyawan:
 - Masukkan username "test" dan password "1" untuk masuk.
 - Setelah berhasil masuk, Anda akan diarahkan kembali ke halaman utama aplikasi.
 
-### Catatan Penting
+## Catatan Penting
 
 Sistem ini hanya ditujukan untuk pengujian dan demonstrasi. Username dan password hardcode "test" dan "1" disediakan untuk tujuan pengujian. Pastikan untuk **tidak menggunakan** kombinasi username dan password ini dalam lingkungan produksi. Sebaiknya ubah dan sesuaikan sistem autentikasi sesuai dengan kebutuhan keamanan Anda sebelum digunakan dalam lingkungan produksi yang sebenarnya.
+
 
 ## Kontribusi
 

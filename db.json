@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "userName": "alidev",
+      "firstName": "Ali",
+      "lastName": "Shawqi",
+      "email": "ali@gmail.com",
+      "birthDate": "1981-10-05 09:00:12",
+      "basicSalary": "20.000.000",
+      "status": "Aktif",
+      "group": "A",
+      "description": "2023-10-05 09:00:12"
+    },
+    {
+      "id": "e3ef",
+      "userName": "test",
+      "firstName": "test",
+      "lastName": "oke",
+      "email": "test@gmail.com",
+      "birthDate": "2000-03-04T17:00:00.000Z",
+      "basicSalary": 20000,
+      "status": "oke",
+      "group": "oke",
+      "description": "2024-03-18T17:00:00.000Z"
+    }
+  ]
+}

@@ -1,79 +1,28 @@
-import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
-import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-
-import { IEmployee } from "../employees/employee.model";
-
-const httpOptions = {
-   headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-   })
-}
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs'
 
 @Injectable({
-   providedIn: 'root'
+  providedIn: 'root'
 })
 export class EmployeeService {
 
-   private empoyeeUrl = "http://localhost:5000/api/employees";
+  constructor(private  _http:HttpClient) { }
 
-   constructor(private http: HttpClient) { }
+  addEmployee(data: any) : Observable<any>{
+    return this._http.post('http://localhost:3000/employees',data)
+  }
 
-   // GET - get all employees 
-   getEmployees(): Observable<IEmployee[]> {
-      return this.http.get<IEmployee[]>(this.empoyeeUrl)
-         .pipe(
-            catchError(this.handleError)
-         );
-   }
+  updateEmployee(id:number , data: any) : Observable<any>{
+    return this._http.put(`http://localhost:3000/employees/${id}`,data)
+  }
 
-   // GET - get a single employee using id
-   getEmployee(id: number): Observable<IEmployee> {
-      const url = `${this.empoyeeUrl}/${id}`
-      return this.http.get<IEmployee>(url)
-         .pipe(
-            catchError(this.handleError)
-         );
-   }
+  getEmployeeList(): Observable<any> {
+    return this._http.get('http://localhost:3000/employees');
+  }
 
-   // POST - add a new employee
-   addEmployee(employee: IEmployee): Observable<IEmployee> {
-      return this.http.post<IEmployee>(this.empoyeeUrl, employee, httpOptions)
-         .pipe(
-            catchError(this.handleError)
-         );
-   }
+  deleteEmployee(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3000/employees/${id}`)
+  }
 
-   // PUT - update an employee
-   updateEmployee(id: number, update: IEmployee): Observable<IEmployee> {
-      const url = `${this.empoyeeUrl}/${id}`;
-      return this.http.put<IEmployee>(url, update, httpOptions)
-         .pipe(
-            catchError(this.handleError)
-         );
-   }
-
-   // DELETE - delete an employee
-   deleteEmployee(id: number): Observable<{}> {
-      const url = `${this.empoyeeUrl}/${id}`;
-      return this.http.delete(url, httpOptions)
-         .pipe(
-            catchError(this.handleError)
-         );
-   }
-
-   private handleError(error: HttpErrorResponse) {
-      if (error.error instanceof ErrorEvent) {
-         // A client-side or network error occurred.
-         console.error('An error occurred:', error.error.message);
-      } else {
-         // Server error
-         console.error(
-            `Backend returned code ${error.status}, ` +
-            `body was: ${error.error}`);
-      }
-      return throwError(
-         'Something bad happened; please try again later.');
-   }
 }

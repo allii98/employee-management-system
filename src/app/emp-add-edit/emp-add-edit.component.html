@@ -1,0 +1,82 @@
+<div mat-dialog-title>
+    <h1>Employee Form</h1>
+</div>
+
+
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="form-fields">
+
+        <!-- FULL NAME -->
+        <div class="d-flex flex-row input-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput formControlName="userName">
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex flex-row input-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. Tony" formControlName="firstName">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. Stark" formControlName="lastName">
+            </mat-form-field>
+        </div>
+    
+    
+        <!-- E-MAIL AND DATE OF BIRTH-->
+        <div class="d-flex flex-row input-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Ex. test@gmail.com" formControlName="email">
+            </mat-form-field> 
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+    
+    
+        <!-- basicSalary AND PACKAGE -->
+        <div class="d-flex flex-row input-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Basic Salary</mat-label>
+                <input matInput type="number" formControlName="basicSalary">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Status</mat-label>
+                <input matInput type="text" formControlName="status">
+            </mat-form-field>
+        </div>
+
+        <!-- group AND desc -->
+        <div class="d-flex flex-row input-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Group</mat-label>
+                <input matInput type="text" formControlName="group">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput [matDatepicker]="desc" formControlName="description">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="desc"></mat-datepicker-toggle>
+                <mat-datepicker #desc></mat-datepicker>
+            </mat-form-field>
+        </div>
+    
+    
+    </div>
+    <div mat-dialog-actions class="form-buttons">
+        <button mat-raised-button type="button" [mat-dialog-close] = "false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? "Update" : "Save"}}</button>
+    </div>
+</form>
